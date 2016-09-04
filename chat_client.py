@@ -25,3 +25,6 @@ s.setblocking(0)
 
 rT = threading.Thread(target=receving , args=("RecvThread",s))
 rT.start()
+alias = raw_input("Name:")
+message = raw_input(alias + "->")
+while message != "q":
