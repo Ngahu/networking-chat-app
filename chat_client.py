@@ -17,4 +17,7 @@ def receving(name,sock):
         finally:
             tLock.release()
 host = '127.0.0.1'
-port =
+port =0
+server =('127.0.0.1, 5000)
+s = socket.socket(socket.AF_INET , socket.SOCK_DGRAM)
+s.bind((host , port))
