@@ -16,3 +16,13 @@ while not quitting:
         data, addr = s.recvfrom(1024)
         if "Quit" in str(data):
             quitting = True
+        if  addr not in clients:
+            clients.append(addr)
+        print time.ctime(time.time()) + str(addr) + ": :" + str(data)
+        for client in clients:
+            s.sendto(data , client)
+    except:
+        pass
+s.close()
+
+
