@@ -7,3 +7,14 @@ shutdown = False
 
 def receving(name,sock):
     while not shutdown:
+        try:
+            tLock.acquire()
+            while True:
+                data,addr = sock.recvfrom(1024)
+                print str(data)
+        except:
+            pass
+        finally:
+            tLock.release()
+host = '127.0.0.1'
+port =
